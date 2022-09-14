@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 const dotenv = require('dotenv').config();
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -57,4 +58,4 @@ app.delete('/movie/:id', (req,res) => {
     res.send("FIlme foi apagado!");
 });
 
-app.listen(process.env.PORT || 8080, () => console.log('Servidor iniciado na porta 8080'));
+app.listen(port, () => console.log('Servidor iniciado na porta 8080'));
